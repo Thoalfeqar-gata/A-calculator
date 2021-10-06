@@ -21,7 +21,7 @@ hr
     flex-direction : column;
     background-color : black;
     align-items: center;
-    border-radius : 5px;
+    border-radius : 10px;
 }
 
 #screen
