@@ -9,7 +9,15 @@ let minus = document.querySelector("#negative-positive");
 let equalSign = document.querySelector("#equal");
 let backSpace = document.querySelector("#delete");
 let clear = document.querySelector("#clear");
+let percent = document.querySelector("#percent");
 
+percent.addEventListener("click", (event) =>{
+    let pattern = /[^0-9|.-]/;
+    if(!pattern.test(screen.textContent))
+    {
+        screen.textContent = (parseFloat(screen.textContent) / 100);
+    }
+});
 clear.addEventListener("click", (event) =>
 {
     screen.textContent = " ";
@@ -72,33 +80,36 @@ dot.addEventListener("click", (event) =>
 
 for(let op of operators)
 {
-    op.addEventListener("click", (event) =>
+    if(op.textContent != "%")
     {
-        let pattern = /[^0-9|.-]/;
-        if(!pattern.test(screen.textContent))
+        op.addEventListener("click", (event) =>
         {
-            if(firstOperand == undefined)
+            let pattern = /[^0-9|.-]/;
+            if(!pattern.test(screen.textContent))
             {
-                operator = event.target.textContent;
-                firstOperand = parseFloat(screen.textContent);
-                screen.textContent = event.target.textContent;
-            }
-            else if(firstOperand != undefined)
-            {
-                secondOperand = parseFloat(screen.textContent);
-                if(operator == '-')
+                if(firstOperand == undefined)
                 {
-                    screen.textContent = operate(firstOperand, "+", secondOperand);
+                    operator = event.target.textContent;
+                    firstOperand = parseFloat(screen.textContent);
+                    screen.textContent = event.target.textContent;
                 }
-                else
+                else if(firstOperand != undefined)
                 {
-                    screen.textContent = operate(firstOperand, operator, secondOperand);
+                    secondOperand = parseFloat(screen.textContent);
+                    if(operator == '-')
+                    {
+                        screen.textContent = operate(firstOperand, "+", secondOperand);
+                    }
+                    else
+                    {
+                        screen.textContent = operate(firstOperand, operator, secondOperand);
+                    }
+                    firstOperand = undefined;
+                    secondOperand = undefined;
                 }
-                firstOperand = undefined;
-                secondOperand = undefined;
             }
-        }
-    });
+        });
+    }
 }
 
 

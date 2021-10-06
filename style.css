@@ -2,6 +2,7 @@ body
 {
     background-color : grey;
     display : flex;
+    flex-direction : column;
     justify-content: center;
     align-items: center;
 }
@@ -17,7 +18,7 @@ hr
     width :550px;
     height : 550px;
     display : flex;
-    margin-top : 50px;
+    margin-top : 35px;
     flex-direction : column;
     background-color : black;
     align-items: center;
@@ -99,4 +100,12 @@ hr
 {
     background-color : rgb(63, 160, 63);
     color : white;
+}
+
+#copyright p
+{
+    color : white;
+    font-size : 18px;
+    font-weigh : bold;
+    font-family: 'Courier New', Courier, monospace;
 }
