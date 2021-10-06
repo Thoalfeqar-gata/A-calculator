@@ -11,6 +11,37 @@ let backSpace = document.querySelector("#delete");
 let clear = document.querySelector("#clear");
 let percent = document.querySelector("#percent");
 
+
+document.addEventListener("keydown", (event) =>
+{
+    let key = event.key;
+    for(let number of numbers)
+    {
+        if(number.textContent == key)
+            number.click();
+    }
+
+    for(let op of operators)
+    {
+        if(op.textContent == key)
+            op.click();
+    }
+
+    if(key == "Backspace")
+    {
+        backSpace.click();
+    }
+    if(key == "Enter")
+    {
+        equalSign.click();
+    }
+    if(key == ".")
+    {
+        dot.click();
+    }
+});
+
+
 percent.addEventListener("click", (event) =>{
     let pattern = /[^0-9|.-]/;
     if(!pattern.test(screen.textContent))
