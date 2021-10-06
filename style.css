@@ -2,7 +2,7 @@ body
 {
     background-color : grey;
     display : flex;
-    flex-direction : column;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
@@ -15,8 +15,8 @@ hr
 }
 #container
 {
-    width :450px;
-    height : 550px;
+    width : 75%;
+    height : 75%;
     display : flex;
     margin-top : 35px;
     flex-direction : column;
@@ -102,7 +102,7 @@ hr
     color : white;
 }
 
-#copyright
+#copyright p
 {
     color : white;
     font-size : 18px;
