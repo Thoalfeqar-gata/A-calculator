@@ -15,7 +15,7 @@ hr
 }
 #container
 {
-    width :550px;
+    width :450px;
     height : 550px;
     display : flex;
     margin-top : 35px;
@@ -102,10 +102,11 @@ hr
     color : white;
 }
 
-#copyright p
+#copyright
 {
     color : white;
     font-size : 18px;
     font-weight : bold;
     font-family: 'Courier New', Courier, monospace;
+    text-align : center;
 }
